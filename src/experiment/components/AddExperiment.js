@@ -10,7 +10,8 @@ let AddExperiment = ({dispatch}) => {
                 input = node;
             }}/>
             <button onClick={() => {
-               dispatch(addExperiment(input.value));
+                dispatch(addExperiment(input.value));
+                input.value = '';
             }}>
                 Add Experiment
             </button>

@@ -4,8 +4,8 @@ import {Provider} from 'react-redux';
 import './App.css';
 import configureStore from './configureStore';
 const store = configureStore();
-import Home from './home/Home';
-import Experiment from './experiment/components/Experiment';
+import Home from './views/home/Home';
+import Experiment from './views/experiment/Experiment';
 
 class App extends Component {
     render() {

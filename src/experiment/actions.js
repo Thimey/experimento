@@ -4,8 +4,6 @@ export const addExperiment = (name) => (dispatch) => {
     dispatch({
         type: 'EXPERIMENT_ADD_REQUEST'
     });
-
-    console.log('name', name);
     return EXPERIMENT
         .create({name})
         .then(response => {
@@ -14,5 +12,19 @@ export const addExperiment = (name) => (dispatch) => {
                 type: 'EXPERIMENT_ADD_SUCCESS',
                 payload: response.data
             })
+        });
+};
+
+export const getExperiments = () => (dispatch) => {
+    dispatch({
+        type: 'EXPERIMENT_GET_ALL_REQUEST'
+    });
+    return EXPERIMENT
+        .getAll()
+        .then(response => {
+            dispatch({
+                type: 'EXPERIMENT_GET_ALL_SUCCESS',
+                payload: response.data
+            });
         });
 };

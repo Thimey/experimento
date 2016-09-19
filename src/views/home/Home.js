@@ -1,5 +1,6 @@
 import React from 'react';
-import Experiments from '../experiment/components/Experiments';
+import AddExperiment from '../../experiment/components/AddExperiment';
+import ExperimentsList from '../../experiment/components/ExperimentsList';
 const Home = () => (
     <div>
         <div className="text-center">
@@ -7,7 +8,8 @@ const Home = () => (
             <p><i>component experiment design</i></p>
         </div>
         <div className="col-md-offset-4 col-md-4 text-center">
-            <Experiments/>
+            <AddExperiment/>
+            <ExperimentsList/>
         </div>
 
     </div>

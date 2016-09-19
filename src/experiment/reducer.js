@@ -6,7 +6,9 @@ const experiments = (state = [], action) => {
                 action.payload
             ];
         case 'EXPERIMENT_ADD_REQUEST':
-            return state
+            return state;
+        case 'EXPERIMENT_GET_ALL_SUCCESS':
+            return action.payload;
         default:
             return state;
     }
