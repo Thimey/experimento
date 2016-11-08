@@ -4,7 +4,6 @@ import * as actions from '../actions';
 import ExperimentListItem from './ExperimentListItem';
 
 class ExperimentsList extends Component {
-
     componentDidMount() {
         const {getExperiments} = this.props;
         getExperiments();
@@ -16,7 +15,7 @@ class ExperimentsList extends Component {
         return (
             <ul className="list-group">
                 {experiments.map(experiment =>
-                    <ExperimentListItem key={experiment._id} {...experiment}/>
+                    <ExperimentListItem key={experiment._fields[0].properties.id} {...experiment._fields[0].properties}/>
                 )}
             </ul>
         );

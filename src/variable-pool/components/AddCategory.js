@@ -8,7 +8,7 @@ let AddExperiment = ({addExperiment}) => {
         <div>
             <input
                 type="text"
-                placeholder="Add Experiment"
+                placeholder="Add Category"
                 onKeyDown={(e) => {
                     if (e.which === 13) {
                         addExperiment(e.target.value);

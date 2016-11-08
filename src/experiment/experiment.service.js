@@ -9,3 +9,7 @@ export const create = (experimentDetails) => {
 export const getAll = () => {
     return axios.get(`${API.url}/api/experiment`);
 };
+
+export const getOne = (experimentId) => {
+    return axios.get(`${API.url}/api/experiment/${experimentId}`);
+};

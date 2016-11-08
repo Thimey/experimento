@@ -10,7 +10,7 @@ export const addExperiment = (name) => (dispatch) => {
             console.log('response', response);
             dispatch({
                 type: 'EXPERIMENT_ADD_SUCCESS',
-                payload: response.data
+                payload: response.data.records[0]
             })
         });
 };
@@ -24,6 +24,20 @@ export const getExperiments = () => (dispatch) => {
         .then(response => {
             dispatch({
                 type: 'EXPERIMENT_GET_ALL_SUCCESS',
+                payload: response.data.records
+            });
+        });
+};
+
+export const getExperiment = (experimentId) => (dispatch) => {
+    dispatch({
+        type: 'EXPERIMENT_GET_REQUEST'
+    });
+    return EXPERIMENT
+        .getOne(experimentId)
+        .then(response => {
+            dispatch({
+                type: 'EXPERIMENT_GET_SUCCESS',
                 payload: response.data
             });
         });
