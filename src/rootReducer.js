@@ -1,10 +1,8 @@
 import {combineReducers} from 'redux';
-import experiments from './experiment/reducer';
-import experiment from './views/experiment/reducer';
+import experiment from './experiment/reducer';
 
 const rootReducer = combineReducers({
-    experiments,
-    experiment
+    experiment,
 });
 
 export default rootReducer;

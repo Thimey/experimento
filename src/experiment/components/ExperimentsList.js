@@ -4,13 +4,12 @@ import * as actions from '../actions';
 import ExperimentListItem from './ExperimentListItem';
 
 class ExperimentsList extends Component {
-    componentDidMount() {
+    componentWillMount() {
         const {getExperiments} = this.props;
         getExperiments();
     }
 
     render () {
-        console.log('props', this.props);
         const {experiments} = this.props;
         return (
             <ul className="list-group">
@@ -23,7 +22,7 @@ class ExperimentsList extends Component {
 }
 
 const mapStateToProps = (state) => (
-    {experiments: state.experiments}
+    {experiments: state.experiment.experiments}
 );
 
 ExperimentsList = connect(mapStateToProps, actions)(ExperimentsList);

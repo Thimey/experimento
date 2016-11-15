@@ -16,9 +16,7 @@ class Experiment extends Component {
             <div>
                 <div className="text-align">
                     <h1>{experiment.name}</h1>
-                    <button onClick={() => router.push('/')}>
-                        New Component
-                    </button>
+                    <Link/>
                 </div>
             </div>
         );
